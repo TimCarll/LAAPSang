@@ -6,8 +6,10 @@ import unidecode
 import glob, os
 import re
 
+#Is it necessary to run global.py again?
 execfile('global.py')
 
+#sterilizes value frome excel sheet such that it is either an int or float; else converts it
 def validate(number):
 	if isinstance(number, (int, float)):
 		return number
@@ -36,12 +38,15 @@ def readFile(filename):
     		if name.endswith('Lab'):
 			sheet = book.sheet_by_name(name)
 	d = dict()
+	
+	#Defines s and loads the name of all drugs specified on the .xls
 	s = []
 	drugs = [sheet.cell_value(3, 0),sheet.cell_value(3,1),sheet.cell_value(3,2)]
 	for i in drugs:
 		if i != "":
 			s.append(str(i))	
 	d["DRUG"] = "+".join(s)
+	
 	d["PT_INIT"] = sheet.cell_value(3, 5)
 	d["PT_MRN"] = sheet.cell_value(4, 5)
 	d["DATE"] = sheet.cell_value(5, 5)
@@ -161,6 +166,7 @@ def writeFile(txt, filename):
 	document.save(filename)
 
 
+#Never called?
 def extractConclusion(filename):
 	if filename is None:
 		return ""
