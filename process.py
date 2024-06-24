@@ -182,6 +182,7 @@ def extractConclusion(filename):
 			s.append(cleanedText)
 	return "\n".join(s)
 
+#Never called?
 def findFiles(filename):
 	strippedFilename = os.path.basename(filename)
 	a = strippedFilename.split(" ");
@@ -192,6 +193,7 @@ def findFiles(filename):
 	s.sort()
 	return s
 
+#Never called?
 def findLastFile(filename):
 	s = findFiles(filename)
 	if len(s)>0:
@@ -199,13 +201,14 @@ def findLastFile(filename):
 	else:
 		return None
 
-
+#Never called?
 def dumpDataHeader(filehandle):
     header = "\"DRUG\", \"PT_INIT\", \"PT_MRN\", \"FILE\", \"LAPTT_R\", \"PTTMX_R\", \"LTT_R\", \"LTTHEP_R\", \"LTTHEP_P\", \"LAPTT_U\", \"LTT_L\", \"LTT_U\", \"LTTHEP_U\", \"PTTMX_U\", \"LAPTT_P\", \"LTT_P\", \"LTTHEP_P\", \"PTTMX_P\", \"PNP_R\", \"PNP_R_LYS\", \"PNP_SD\", \"PNP_U\", \"DRVVS_R\", \"DRVVMX_R\", \"DRVVC_R\", \"PCTCO_R\", \"DRVVS_U\", \"DRVVMX_U\", \"PCTCO_U\", \"DRVVS_P\", \"DRVVMX_P\", \"PCTCO_P\", \"DPTS_R\", \"DPTMX_R\", \"DPTC_R\", \"DPTCOR_R\", \"DPTS_U\", \"DPTMX_U\", \"DPTCOR_U\", \"DPTS_P\", \"DPTMX_P\", \"DPTCOR_P\", \"AG_1_R\", \"AG_2_R\", \"AG_3_R\", \"AG_4_R\", \"AG_5_R\", \"AG_6_R\", \"AG_7_R\", \"AG_8_R\", \"AG_1_U\", \"AG_2_U\", \"AG_3_U\", \"AG_4_U\", \"AG_5_U\", \"AG_6_U\", \"AG_7_U\", \"AG_8_U\",\"STACLOT-USED\",\"STACLOT-LA1\",\"STACLOT-LA1-ULN\",\"STACLOT-LA1-95\",\"STACLOT-LA2\",\"STACLOT-LA2-ULN\",\"STACLOT-LA2-95\",\"STACLOT-CORR\",\"STACLOT-CORR-ULN\",\"STACLOT-CORR-95\""
     header = "\"Drug\", \"Patient Initials\", \"Patient MRN\", \"File\",  \"LAPTT Abnormal\", \"DRVVT Abnormal\", \"DPT Abnormal\", \"Antigenic Testing 1 Abnormal\", \"Antigenic Testing 2 Abnormal\", \"LAPTT Screening Result\", \"PTT Mixing Result\", \"LTT Result\", \"LTTHEP Result\", \"LTTHEP Prolongation\", \"LAPTT Upper Limit of Normal\", \"LTT Lower Limit of Normal\", \"LTT Upper Limit of Normal\", \"LTTHEP Upper Limit of Normal\", \"PTTMX Upper Limit of Normal\", \"LAPTT Prolongation\", \"LTT Prolongation\", \"LTTHEP Prolongation\", \"PTTMX Prolongation\", \"PNP Result\", \"PNP Result using Lysate\", \"PNP_SD\", \"PNP Upper Limit of Normal\", \"DRVVT Screening Result\", \"DRVVT Mixing Result\", \"DRVVT Result\", \"DRVVT Percent Correction Result\", \"DRVVT Upper Limit of Normal\", \"DRVVT Mixing Upper Limit of Normal\", \"DRVVT % Correction Upper Limit of Normal\", \"DRVVT Prolongation\", \"DRVVT Mixing Prolongation\", \"DRVVT % Correction Prolongation\", \"DPT Screening Result\", \"DPT Mixing Result\", \"DPT Correction Result\", \"DPT % Correction Result\", \"DPT Screen Upper Limit of Normal\", \"DPT Mixing Upper Limit of Normal\", \"DPT % Correction Upper Limit of Normal\", \"DPT Screening Prolongation\", \"DPT Mixing Prolongation\", \"DPT % Correction Prolongation\", \"aCA IgG Result\", \"aCA IgM Result\", \"beta2 IgG Result\", \"beta2 IgM Result\", \"aCA IgA Result\", \"beta2 IgA Result\", \"APS/PT IgG Result\", \"APS/PT IgM Result\", \"AG_1 Upper Limit of Normal\", \"aCA IgM Upper Limit of Normal\", \"beta2 IgG Upper Limit of Normal\", \"beta2 IgM Upper Limit of Normal\", \"aCA IgA Upper Limit of Normal\", \"beta2 IgA Upper Limit of Normal\", \"APS/PT IgG Upper Limit of Normal\", \"APS/PT IgM Upper Limit of Normal\",\"Staclot used\", \"Staclot LA1 Pt Result\",\"Staclot LA1 ULN\",\"Staclot LA1 95th\",\"Staclot LA2 Pt Result\",\"Staclot LA2 ULN\",\"Staclot LA2 95th\",\"Staclot Corr Pt Result\",\"Staclot Corr ULN\",\"Staclot Corr 95th\""
     filehandle.write(header + "\n")
     return
 
+#Never called?
 def dumpData(file, filehandle):
     d = readFile(os.path.join(REPORTDIR,file))
  
@@ -225,7 +228,8 @@ def dumpData(file, filehandle):
     filehandle.write(",".join(b) + "\n")
    
     return
-    
+
+#Never called?
 def dumpDataReportDir(outputfilename):
     targetfile = open(outputfilename,"w")
     dumpDataHeader(targetfile)
