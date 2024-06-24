@@ -359,7 +359,8 @@ def header(d, filename):
 
 def conclusionAlgorithm(d):
     (drug, LAPTT, DRVVT, DPT) = (d["DRUG"], d["PNP_SD"], d["PCTCO_R"], d["DPTCOR_R"])
-    # warfarin, heparin, enoxaparin,...
+    
+    # warfarin, heparin, enoxaparin,... nonfunctional?
     mydrugs = ["heparin", "warfarin", "enoxaparin", "argatroban", "lmwh", "lovenox", "fondaparinux", "aspirin",
                "rivaroxaban"]
     drug = drug.lower()
@@ -429,11 +430,12 @@ def conclusionAlgorithm(d):
             "The current study does not provide laboratory evidence of antiphospholipid syndrome.")
         Case = "NEGATIVE"
 
-    # fondaparinux
+    # fondaparinux - Can be removed
     if d["fondaparinux"]:
         s.append(
             "However, interpretation of subsequent studies to evaluate the continuing presence of a lupus anticoagulant were inconclusive due to the presence of fondaparinux, which can contribute to false positive results in the DRVVT-based system.")
 
+    # rivaroxaban - Can be removed
     if d["rivaroxaban"]:
         s.append(
             "Review of this patient's chart indicates that he is presently receiving the anti-Xa drug, rivaroxaban.  Recent literature demonstrates that this anticoagulant exerts a greater inhibitory effect upon the initial phase of the DRVVT as opposed to its effect upon the confirmatory phase, and accordingly rivaroxaban by itself is capable of producing a false positive pattern mimicking that of a lupus anticoagulant in the DRVVT-based testing system. Thus, we are unable based upon the present studies alone to determine how much of the abnormality seen in the functional testing is simply an artifact of the rivaroxaban anticoagulation, and how much might be resulting from the actual presence of a lupus anticoagulant.  Repeat DRVVT-based testing at such time that the patient is no longer receiving rivaroxaban may be considered.")
