@@ -1,3 +1,4 @@
+
 from xlrd import open_workbook
 import xlrd
 from docx import Document
@@ -10,6 +11,7 @@ import re
 execfile('global.py')
 
 #sterilizes value frome excel sheet such that it is either an int or float; else converts it
+#If number is float or int, return it without touching it. If number has a space, "<" or ">", extract only the float/int and return it - Aryan
 def validate(number):
 	if isinstance(number, (int, float)):
 		return number
