@@ -1,7 +1,5 @@
 import os
 
-
-
 def testLevelCheck():
     level = 0
 
@@ -319,24 +317,4 @@ for labReport in os.listdir(reportsFolderDir):
         
         labInterpFileName = labReport[:-4]
         writeFile(reportsFolderDir, content, labInterpFileName)
-
-
-
-
-
-
-#def valueCheck(value):
-    #if value == -1 or value == -2:
-        #return value
-
-    #else:
-        #return None
-
-
-
-
-
-#print(aPTT_Section())
-#print()
-#print(DRVVT_DPT_Sections("DRVVT", report["DRVVS_R"], report["DRVVS_U"], report["DRVVMX_R"], report["DRVVMX_U"], report["DRVVC_R"], report["PCTCO_R"], report["PCTCO_U"]))
 
