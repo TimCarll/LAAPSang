@@ -7,7 +7,7 @@ set laapsangScriptPath=..\laapsang.py
 
 REM Execute laapsang.py
 
-%pythonPath% %laapsangScriptPath% Carll
+%pythonPath% %laapsangScriptPath%
 
 echo Scripts have been executed and the Program has ended.
 pause
